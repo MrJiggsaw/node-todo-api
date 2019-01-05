@@ -100,3 +100,13 @@ describe('GET /todos/:id' ,() => {
       .end(done);
   });
 });
+
+describe('DELETE /todos/:id' , () => {
+
+  it('should return 404 if ObjectID invlaid' , (done) => {
+    request(app)
+      .delete('/todos/123')
+      .expect(404)
+      .end(done);
+  });
+});
